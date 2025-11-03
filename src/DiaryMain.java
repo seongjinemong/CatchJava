@@ -21,5 +21,36 @@ public class DiaryMain {
 }
 
 class MyPreciousDiary {
+    int year, month, day;
+    String[] diary = new String[10];
+    int numDiary = 0; // 지금까지 적은 일기 수
 
+    public MyPreciousDiary() {
+        this.year = 2025;
+        this.month = 1;
+        this.day = 1;
+    }
+
+    public MyPreciousDiary(int year, int month, int day) {
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }
+
+    public String createdAt() {
+        return String.format("%04d-%02d-%02d", year, month, day);
+    }
+
+    public int getNumDiary() {
+        return numDiary;
+    }
+
+    public void writeDiary(String text) {
+        diary[numDiary] = text;
+        numDiary++;
+    }
+
+    public String getDiary(int num) {
+        return diary[num];
+    }
 }
